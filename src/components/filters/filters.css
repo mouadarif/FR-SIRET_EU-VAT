@@ -1,0 +1,202 @@
+/* ── Advanced filters ───────────────────────────────────────────── */
+
+.advanced-filters {
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface-1);
+}
+
+.toggle-filters-btn {
+    width: 100%;
+    border: none;
+    background: linear-gradient(180deg, var(--surface-1) 0%, var(--surface-2) 100%);
+    color: var(--ink-700);
+    font-weight: 800;
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.toggle-filters-btn:focus-visible,
+.filter-chip button:focus-visible,
+.clear-all-btn:focus-visible {
+    outline: 3px solid var(--fr-focus);
+    outline-offset: 2px;
+}
+
+.filter-badge {
+    margin-left: auto;
+    border-radius: var(--radius-pill);
+    background: var(--fr-accent);
+    color: #fff;
+    font-size: var(--text-xs);
+    font-weight: 800;
+    padding: var(--space-1) var(--space-2);
+}
+
+.filters-content {
+    border-top: 1px solid var(--border-soft);
+    padding: var(--space-4);
+    background: var(--surface-1);
+}
+
+.filter-section + .filter-section {
+    margin-top: var(--space-4);
+}
+
+.filter-section h4 {
+    margin-bottom: var(--space-3);
+    font-size: 0.82rem;
+    color: var(--ink-700);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.filter-field {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.filter-field label {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--ink-700);
+}
+
+.filter-fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-fieldset legend {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--ink-700);
+    margin-bottom: var(--space-2);
+}
+
+.filter-field input,
+.filter-field select {
+    width: 100%;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.85rem;
+    background: var(--surface-1);
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+    outline: none;
+    border-color: var(--fr-accent);
+    box-shadow: 0 0 0 3px var(--fr-focus);
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-1) 0;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.83rem;
+    font-weight: 700;
+    color: var(--ink-700);
+}
+
+/* ── Active filters display ────────────────────────────────────── */
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-soft);
+    background: var(--surface-1);
+}
+
+.filters-label {
+    font-size: 0.82rem;
+    color: var(--ink-500);
+    font-weight: 700;
+}
+
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--fr-focus);
+    background: var(--fr-blue-muted);
+    color: var(--ink-900);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+}
+
+.filter-chip button {
+    width: 1.02rem;
+    height: 1.02rem;
+    border-radius: var(--radius-pill);
+    border: none;
+    background: transparent;
+    color: var(--ink-500);
+    cursor: pointer;
+    font-size: 0.82rem;
+}
+
+.filter-chip button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--ink-900);
+}
+
+.clear-all-btn {
+    border: none;
+    border-radius: var(--radius-pill);
+    background: var(--error-100);
+    color: var(--error-700);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    padding: var(--space-1) var(--space-3);
+    cursor: pointer;
+}
+
+.clear-all-btn:hover {
+    filter: brightness(0.97);
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+
+@media (max-width: 760px) {
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+
+    .active-filters {
+        align-items: flex-start;
+    }
+}

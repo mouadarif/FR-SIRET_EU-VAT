@@ -1,0 +1,131 @@
+openapi: 3.1.0
+info:
+  title: Sirene API
+  description: Documentation de l'API Sirene
+  version: "3.11"
+servers:
+- url: https://api.insee.fr/api-sirene/3.11
+
+# KEY ENDPOINTS:
+
+# 1. SIRET Direct Lookup:
+#    GET /siret/{siret}
+#    Description: Recherche d'un établissement par son numéro Siret (14 chiffres)
+#    Requires: X-INSEE-Api-Key-Integration header
+#    Returns: Single establishment
+
+# 2. SIREN Direct Lookup:
+#    GET /siren/{siren}
+#    Description: Recherche d'une unité légale par son numéro Siren (9 chiffres)
+#    Requires: X-INSEE-Api-Key-Integration header
+#    Returns: Single unité légale
+
+# 3. Multi-criteria SIRET Search:
+#    GET /siret?q={query}
+#    Description: Recherche multicritère d'établissements
+#    Parameters:
+#      - q: Query string (can search by siret, denomination, etc.)
+#      - nombre: Number of results (default 20, max 200000)
+#      - debut: Starting position (default 0, max 10000)
+#      - champs: Comma-separated list of fields to return
+#      - tri: Sort fields
+#      - date: Historical date (AAAA-MM-JJ)
+
+# 4. Multi-criteria SIREN Search:
+#    GET /siren?q={query}
+#    Description: Recherche multicritère d'unités légales
+#    Same parameters as /siret
+
+tags:
+- name: UniteLegale
+  description: APIs des unités légales
+- name: Etablissement
+  description: APIs des établissements
+- name: Informations
+  description: APIs des informations (état des données)
+  
+paths:
+  /siren/{siren}:
+    get:
+      summary: Recherche d'une unité légale par son numéro Siren
+      description: Recherche d'une unité légale par son numéro Siren (9 chiffres)
+      parameters:
+      - name: siren
+        in: path
+        required: true
+        schema:
+          type: string
+      security:
+      - ApiKeyAuth: []
+      
+  /siret/{siret}:
+    get:
+      summary: Recherche d'un établissement par son numéro Siret
+      description: Recherche d'un établissement par son numéro Siret (14 chiffres)
+      parameters:
+      - name: siret
+        in: path
+        required: true
+        schema:
+          type: string
+      security:
+      - ApiKeyAuth: []
+      
+  /siret:
+    get:
+      summary: Recherche multicritère d'établissements
+      parameters:
+      - name: q
+        in: query
+        description: "Contenu de la requête multicritères"
+        schema:
+          type: string
+      - name: nombre
+        in: query
+        description: "Nombre d'éléments demandés dans la réponse, défaut 20"
+        schema:
+          type: integer
+          maximum: 200000
+          minimum: 0
+      - name: debut
+        in: query
+        description: "Rang du premier élément demandé dans la réponse, défaut 0"
+        schema:
+          type: integer
+          maximum: 10000
+          minimum: 0
+      security:
+      - ApiKeyAuth: []
+      
+  /siren:
+    get:
+      summary: Recherche multicritère d'unités légales
+      parameters:
+      - name: q
+        in: query
+        description: "Contenu de la requête multicritères"
+        schema:
+          type: string
+      - name: nombre
+        in: query
+        description: "Nombre d'éléments demandés dans la réponse, défaut 20"
+        schema:
+          type: integer
+          maximum: 200000
+          minimum: 0
+      - name: debut
+        in: query
+        description: "Rang du premier élément demandé dans la réponse, défaut 0"
+        schema:
+          type: integer
+          maximum: 10000
+          minimum: 0
+      security:
+      - ApiKeyAuth: []
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      name: X-INSEE-Api-Key-Integration
+      in: header

@@ -1,0 +1,255 @@
+@import './tokens.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--ink-900);
+    background: linear-gradient(180deg, #faf8f4 0%, var(--paper) 100%);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── App container ─────────────────────────────────────────────── */
+
+.app-container {
+    width: min(var(--container), calc(100vw - var(--space-6)));
+    margin: var(--space-5) auto var(--space-8);
+    display: grid;
+    gap: var(--space-4);
+}
+
+/* ── App header ────────────────────────────────────────────────── */
+
+.app-header {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(245, 242, 236, 0.98) 100%);
+    padding: var(--space-5) var(--space-6);
+    box-shadow: var(--shadow-lg);
+    animation: rise 420ms ease-out both;
+}
+
+.service-switcher {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.service-switcher-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--ink-700);
+    background: var(--surface-1);
+    border: 1px solid var(--border-soft);
+    cursor: pointer;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+
+.service-switcher-button:hover,
+.service-switcher-button:focus-visible {
+    background: var(--surface-2);
+    border-color: var(--fr-focus);
+    outline: 3px solid rgba(0, 0, 145, 0.2);
+    outline-offset: 2px;
+}
+
+.service-switcher-button.active {
+    background: var(--fr-blue-muted);
+    border-color: var(--fr-accent);
+    box-shadow: inset 0 -3px 0 var(--fr-accent);
+}
+
+.service-switcher-code {
+    display: grid;
+    place-items: center;
+    min-width: 2.4rem;
+    height: 2.4rem;
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+    color: var(--ink-800);
+    font-size: var(--text-xs);
+    font-weight: 900;
+}
+
+.service-switcher-button.active .service-switcher-code {
+    background: var(--fr-accent);
+    color: #ffffff;
+}
+
+.service-switcher-copy {
+    display: block;
+}
+
+.service-switcher-copy strong,
+.service-switcher-copy small {
+    display: block;
+}
+
+.service-switcher-copy strong {
+    color: var(--ink-900);
+    font-size: 0.82rem;
+    line-height: 1.2;
+}
+
+.service-switcher-copy small {
+    margin-top: 0.1rem;
+    color: var(--ink-500);
+    font-size: 0.72rem;
+    line-height: 1.25;
+}
+
+.app-header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-top: var(--space-5);
+}
+
+.app-heading h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink-950);
+}
+
+.service-info {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-pill);
+    background: var(--surface-1);
+    color: var(--ink-700);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ── Search section container ──────────────────────────────────── */
+
+.search-section {
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-5);
+    animation: rise 500ms ease-out both;
+}
+
+/* ── Error message ─────────────────────────────────────────────── */
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--error-100);
+    border: 1px solid rgba(179, 54, 45, 0.24);
+    color: var(--error-700);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    font-weight: 700;
+    font-size: var(--text-base);
+}
+
+/* ── Results header ────────────────────────────────────────────── */
+
+.results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.results-header p {
+    font-size: var(--text-base);
+    color: var(--ink-700);
+    font-weight: 600;
+}
+
+/* ── Global form reset ─────────────────────────────────────────── */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* ── SR-only utility ───────────────────────────────────────────── */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ── Animations ────────────────────────────────────────────────── */
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+    .app-container {
+        width: calc(100vw - var(--space-4));
+        margin-top: var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .app-header,
+    .search-section {
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+    }
+
+    .app-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-switcher {
+        flex-wrap: wrap;
+    }
+
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
