@@ -49,6 +49,10 @@ Le backend local ecoute sur `http://127.0.0.1:8080`. Vite ecoute sur `http://127
 
 Voir aussi [DEPENDENCY_GRAPH.md](./DEPENDENCY_GRAPH.md).
 
+Wiki detaille:
+
+[Product, Architecture, and Design Wiki](./WIKI.md)
+
 ## Langages et runtimes
 
 | Couche | Langage / runtime | Outils principaux |
@@ -334,6 +338,10 @@ The browser helps the user search, upload files, pick columns, and download resu
 The runtime shape is the same as the French section above: React UI, Vite dev proxy, FastAPI backend, `enrich_by_siret.py` for SIRET enrichment, and direct FastAPI VIES enrichment for VAT files.
 
 See [DEPENDENCY_GRAPH.md](./DEPENDENCY_GRAPH.md).
+
+Detailed wiki:
+
+[Product, Architecture, and Design Wiki](./WIKI.md)
 
 ## Setup
 
