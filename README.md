@@ -79,6 +79,12 @@ package.json                               Scripts npm
 
 Creez ou mettez a jour `.env` a la racine. Ne commitez jamais de vrais secrets.
 
+Pour utiliser l'enrichissement SIRET, la personne qui installe l'application doit disposer d'une ou plusieurs cles API INSEE Sirene. Ces cles peuvent etre recuperees gratuitement depuis le catalogue officiel des API de l'Insee:
+
+[https://api.insee.fr/catalogue/](https://api.insee.fr/catalogue/)
+
+Dans le catalogue, creer un compte si necessaire, creer une application, puis souscrire a l'API Sirene afin de recuperer une cle API. L'application accepte une cle unique ou plusieurs cles pour la rotation.
+
 OAuth bearer INSEE:
 
 ```powershell
@@ -331,6 +337,12 @@ python -m pip install -r requirements.txt
 ```
 
 Create `.env` and set either `INSEE_TOKEN` or `VITE_INSEE_API_KEY*`. Optional tuning variables are `INSEE_MAX_WORKERS`, `SIRET_ENRICH_TIMEOUT_SEC`, `INSEE_MIN_INTERVAL_SEC`, `INSEE_GLOBAL_CALLS_PER_MINUTE`, and `VIES_TIMEOUT_SEC`.
+
+For SIRET enrichment, the app operator must have one or more INSEE Sirene API keys. They can be obtained for free from the official INSEE API catalogue:
+
+[https://api.insee.fr/catalogue/](https://api.insee.fr/catalogue/)
+
+Create an account if needed, create an application, then subscribe to the Sirene API to retrieve an API key. The app supports one key or multiple keys for rotation.
 
 ## Development
 
