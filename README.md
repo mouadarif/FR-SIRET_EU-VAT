@@ -276,13 +276,20 @@ Invoke-RestMethod https://your-domain.example/api/health
 
 Les screenshots peuvent etre pris depuis l'app locale une fois frontend et backend demarres. Pour des donnees fournisseurs reelles, utilisez des captures sanitisees.
 
-Emplacements recommandes:
+Un guide illustre est disponible ici:
+
+[Guide des captures d'ecran](./SCREENSHOTS_GUIDE.md)
+
+Captures incluses:
 
 ```text
-docs/screenshots/import-upload.png
-docs/screenshots/siret-column-picker.png
-docs/screenshots/vat-column-picker.png
-docs/screenshots/enrichment-result-download.png
+screenshots/1.png
+screenshots/2.png
+screenshots/3.png
+screenshots/4.png
+screenshots/traitement en lot siret.png
+screenshots/Traitement en lot TVA.png
+screenshots/TVA-1.png
 ```
 
 ## Notes et limites
@@ -399,6 +406,12 @@ python -m uvicorn backend.app:app --host 0.0.0.0 --port 8080
 ```
 
 Route `/api/enrich-by-siret`, `/api/enrich-by-vat`, and `/api/health` to FastAPI. Serve all other frontend routes from `dist/`.
+
+## Screenshots
+
+An illustrated screenshot guide is available here:
+
+[Screenshot guide](./SCREENSHOTS_GUIDE.md)
 
 ## Contact
 
