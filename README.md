@@ -291,6 +291,12 @@ docs/screenshots/enrichment-result-download.png
 - Les gros fichiers peuvent depasser les limites d'un deploiement serverless. Pour les gros volumes, utilisez un backend long-running ou ajoutez une queue asynchrone.
 - `exceljs` cree un gros chunk frontend car le preview tableur reste disponible dans le navigateur.
 
+## Contact
+
+Pour se connecter, poser des questions ou echanger autour de l'application:
+
+[ibnelaryf.mouad@gmail.com](mailto:ibnelaryf.mouad@gmail.com)
+
 ---
 
 # INSEE UI APP
@@ -393,3 +399,9 @@ python -m uvicorn backend.app:app --host 0.0.0.0 --port 8080
 ```
 
 Route `/api/enrich-by-siret`, `/api/enrich-by-vat`, and `/api/health` to FastAPI. Serve all other frontend routes from `dist/`.
+
+## Contact
+
+To connect, ask questions, or discuss the app:
+
+[ibnelaryf.mouad@gmail.com](mailto:ibnelaryf.mouad@gmail.com)
