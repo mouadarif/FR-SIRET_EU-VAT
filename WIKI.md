@@ -2,6 +2,12 @@
 
 This wiki explains the app in detail: what it does, who it is for, how the main features work, how the code is organized, and why the current design choices were made.
 
+## Contact
+
+For questions, suggestions, collaboration, or support:
+
+**Mouad Ibnelaryf** - [ibnelaryf.mouad@gmail.com](mailto:ibnelaryf.mouad@gmail.com)
+
 ## 1. Product Overview
 
 **FR SIRET / EU VAT** is a web application for checking, validating, and enriching French company registry data and European VAT data.

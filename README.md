@@ -4,6 +4,12 @@
 
 Application React + Vite avec une frontiere backend FastAPI Python pour rechercher des entreprises, verifier des numeros TVA et enrichir des fichiers CSV/Excel cote serveur.
 
+## Contact rapide
+
+Pour toute question, suggestion, collaboration ou demande d'aide:
+
+**Mouad Ibnelaryf** - [ibnelaryf.mouad@gmail.com](mailto:ibnelaryf.mouad@gmail.com)
+
 ## Fonctionnalites
 
 - Recherche interactive INSEE par nom d'entreprise, SIRET ou SIREN.
@@ -313,6 +319,12 @@ Pour se connecter, poser des questions ou echanger autour de l'application:
 # INSEE UI APP
 
 React + Vite app with a Python FastAPI backend boundary for company lookup, VAT verification, and server-side CSV/Excel enrichment.
+
+## Quick Contact
+
+For questions, suggestions, collaboration, or support:
+
+**Mouad Ibnelaryf** - [ibnelaryf.mouad@gmail.com](mailto:ibnelaryf.mouad@gmail.com)
 
 ## Features
 
